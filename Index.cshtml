@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+     <script src="http://localhost:53167/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/Users.js"></script>
+
+    <script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" defer></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/validat.js"></script>
+
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+   
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+   <script>
+       $(document).ready(function () {
+       $('#DOB').datetimepicker({
+           timepicker: false,
+       });
+       });
+
+   </script>
+  
+</head>
+<body>
+    <div class="loaderbody" id="loaderbody">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <h2>User Records</h2>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New User</button><br /><br />
+        <table id="Mytable" class="table table-bordered table-hover">
+            <thead>/
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        UserName
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        DOB
+                    </th>
+                    <th>
+                        EmailID
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                    <th>
+                        Landline
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        PinCode
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Add User</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="myfrm">
+                        <div class="form-group">
+                            <label for="Id">Id</label>
+                            <input type="text" class="form-control" id="Id" placeholder="Id" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Name" />
+                            @*<i id="i" class="fas fa-exclamation"></i>*@
+                        </div>
+                        <div class="form-group">
+                            <label for="UserName">UserName</label>
+                            <input type="text" class="form-control" id="UserName" placeholder="UserName" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="text" class="form-control" id="Password" placeholder="Password" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Gender">Gender</label>
+                            <input type="text" class="form-control" id="Gender" placeholder="Gender" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="DOB">DOB</label>
+                            <input type="text" class="form-control" id="DOB" placeholder="DOB" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="EmailID">EmailID</label>
+                            <input type="text" class="form-control" id="EmailID" placeholder="EmailID" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Mobile">Mobile</label>
+                            <input type="text" class="form-control" id="Mobile" placeholder="Mobile">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Landline">Landline</label>
+
+                            <input type="text" class="form-control" id="Landline" placeholder="Landline" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Address">Address</label>
+                            <input type="text" class="form-control" id="Address" placeholder="Address" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="PinCode">PinCode</label>
+                            <input type="text" class="form-control" id="PinCode" placeholder="PinCode" />
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
